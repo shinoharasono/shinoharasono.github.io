@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清远旅游网站</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <div class="logo"> <img src="./img/Logo.png"></div>
+        <div class="logo">清远旅游网站</div>
+        <nav>
+            <a href="../index/index.html">首页</a>
+            <a href="../Attractions/Attractions.html">景点介绍</a>
+            <a href="../Booking/Booking.html">酒店预订</a>
+            <a href="../mall/mall.html">清远商城</a>
+            <a href="../shopping/Shopping.html">购物推荐</a>
+            <div class="dropdown">
+                <a href="#">友情链接</a>
+                <ul>
+                    <li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+                    <li><a href="https://www.163.com/" target="_blank">网易</a></li>
+                    <li><a href="https://www.sohu.com/" target="_blank">搜狐</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p><a href="../login/login.html"> 登录</a>/<a href="../register/register.html"> 注册</a></p>
+    </header>
+    
+    <div id="banner">
+        <ul id="imglist">
+            <li><img src="./img/background.jpg" alt=""></li>
+            <li><img src="./img/background2.png" alt=""></li>
+            <li><img src="./img/background3.jpg" alt=""></li>
+            <li><img src="./img/background4.jpg" alt=""></li>
+            <li><img src="./img/background.jpg" alt=""></li>
+        </ul>
+        <ul id="icolist">
+            <li><p>1</p></li>
+            <li><p>2</p></li>
+            <li><p>3</p></li>
+            <li><p>4</p></li>
+        </ul>
+        <div class="prev"><</div>
+        <div class="next">></div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <a href="./attraction/attraction1.html">
+                <img src="./img/river.jpg" alt="连州地下河">
+                <h2>连州地下河</h2>
+                <p>国家5A级旅游景区，以神秘、瑰丽的石钟乳和洞穴暗河而闻名，有广东地下第一河之称</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="./attraction/attraction2.html">
+                <img src="./img/huangtengxia.jpg" alt="黄腾峡景区">
+                <h2>黄腾峡景区</h2>
+                <p>厚重的历史文化积淀和独特的地理环境与景色如画的自然风光相得益彰</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="./attraction/attraction3.html">
+                <img src="./img/Gulong.jpg" alt="古龙峡玻璃大峡谷">
+                <h2>古龙峡玻璃大峡谷</h2>
+                <p>峡谷位于万丈崖大瀑布的顶端，集玻璃平台、玻璃栈道、玻璃索桥为一体的高空观光玻璃组合</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="./attraction/attraction4.html">
+                <img src="./img/Fall.jpg" alt="天子山瀑布">
+                <h2>天子山瀑布</h2>
+                <p>景区自然资源丰富，拥有竹海与瀑布群，一年四季展现各种风情韵味</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="./attraction/attraction5.html">
+                <img src="./img/Walled.jpg" alt="千年瑶寨">
+                <h2>千年瑶寨</h2>
+                <p>南岗千年瑶寨始建于宋代，至今已有千余年的历史，被誉为“世界瑶族第一寨”</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="./attraction/attraction6.html">
+                <img src=".//img/field.jpeg" alt="连山欧家梯田">
+                <h2>连山欧家梯田</h2>
+                <p>广东最大原生梯田，总面积一千多亩，曲线优美，气势磅礴，是广东省摄影爱好者最喜爱的目的地之一</p>
+            </a>
+        </div>
+    </div>
+    <footer>
+        ©桐 广东建设职业技术学院建筑信息学院22软件技术8班 3120735361@qq.com | <a href="../ContactUs/ContactUs.html">联系我们</a>
+    </footer>
+</body>
+<script>
+    var eprev = document.querySelector('.prev');
+    var enext = document.querySelector('.next');
+    var esico = document.getElementById('icolist').getElementsByTagName('li');
+    var eicolist = document.querySelector('#icolist');
+    var eimglist = document.querySelector('#imglist');
+    var left = 0;
+    var timer;
+    run();
+    function run(){
+        if( left <= -6000){
+            left = 0;
+        }
+        var m = Math.floor(-left / 1500);
+        imglist.style.marginLeft = left + 'px';
+        var n = (left % 1500 == 0)? n = 1200 : n = 10;
+        left -= 10;
+        timer = setTimeout(run,n);
+        icochange(m);
+    }
+    function imgchange(n){
+        let lt = -(n * 1500);
+        imglist.style.marginLeft = lt + 'px';
+        left = lt;
+    }
+    eprev.onclick = function(){
+        let prevgo = Math.floor(-left / 1500) - 1;
+        if(prevgo == -1){
+            prevgo = 3;
+        }
+        imgchange(prevgo);
+    }
+    enext.onclick = function(){
+        let nextgo = Math.floor(-left / 1500) + 1;
+        if(nextgo == 4){
+            nextgo = 0;
+        }
+        imgchange(nextgo);
+    }
+    function icochange(m){
+        for (let index = 0; index < esico.length; index++) {
+            esico[index].style.backgroundColor = '';
+        }
+        if(m < esico.length){
+            esico[m].style.backgroundColor = 'red';
+        }
+    }
+    eicolist.onclick = function(){
+        var tg = event.target;
+        if(!isNaN(tg.innerHTML)){
+            let ico = tg.innerHTML - 1;
+            imgchange(ico);
+            icochange(ico);
+        }
+    }
+    eimglist.onmouseover = function(){
+        clearTimeout(timer);
+    }
+    eimglist.onmouseout = function(){
+        run();
+    }
+</script>
+</html>

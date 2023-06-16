@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body { 
+    background-color: #f7f7f7; 
+}
+header{
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header p {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+header p a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+header p a:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
+#nav1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}   
+#header {
+  /* background-color: #000000; */
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #000000;
+  font-size: 30px;
+  font-weight: bold;
+}
+#nav {
+  background-color: #d9d9d9;
+  height: 40px;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav li {
+  float: left;
+  width: 16.5%;
+  text-align: center;
+}
+
+#nav a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #333;
+}
+#nav a:hover {
+  background-color: #e6e6e6;
+}
+#content {
+  margin: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+h2 {
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+p {
+  color: #666;
+  line-height: 1.5em;
+  margin: 10px 0;
+}
+.image {
+    /* text-align: center; */
+    margin: 20px 20px;
+    width: 33%;
+    /* width: 400px; */
+    /* height: 280px; */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow:  #ccc;
+}
+.image img {
+  width: 500px;
+  height: 300px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+.flex-div{
+    display: flex;
+    width: auto;
+}
+/* .image img {
+  max-width: 100%;
+  max-height: 100%;
+} */
+.aaa{
+    text-align: center;
+}
+.logo img {
+            width: 55px;
+}
